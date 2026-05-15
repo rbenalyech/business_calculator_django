@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Business Calculator</title>
+</head>
+<body>
+
+<h1>Business Calculator</h1>
+
+<form method="POST">
+    {% csrf_token %}
+
+    <label>Prijs:</label>
+    <input type="number" name="price">
+
+    <br><br>
+
+    <label>Aantal:</label>
+    <input type="number" name="quantity">
+
+    <br><br>
+
+    <button type="submit">Bereken</button>
+</form>
+
+{% if revenue %}
+    <h2>Omzet: {{ revenue }}</h2>
+    <h2>BTW: {{ vat }}</h2>
+{% endif %}
+
+</body>
+</html>
